@@ -93,6 +93,10 @@ height:97vh;
     font-size: 110px;
 }
 
+.reset{
+    padding-top:10vh;
+}
+
 .right{
     display: flex;
     background-color: #003399;

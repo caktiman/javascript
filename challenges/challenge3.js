@@ -86,12 +86,25 @@ function leftPenaltyMinus(){
 }
 
 function rightPenaltyPlus(){
-    let leftname = prompt("Who?");
-    document.querySelector(".d1").innerHTML = leftname; 
+    let rightname = prompt("Who?");
+    document.querySelector(".d1").innerHTML = rightname; 
 }
 
 function rightPenaltyMinus(){
     document.querySelector(".d1").innerHTML = "";
+}
+
+function resetnum(){
+    var hscore = 0;
+    var gscore = 0;
+    var pscore = 0;
+    var leftname = "None";
+    var rightname = "None";
+    document.querySelector(".a1").innerHTML = hscore;
+    document.querySelector(".c1").innerHTML = gscore;
+    document.querySelector(".periodNumber").innerHTML = pscore;
+    document.querySelector(".b1").innerHTML = leftname;
+    document.querySelector(".d1").innerHTML = rightname; 
 }
 
 
