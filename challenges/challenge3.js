@@ -61,14 +61,18 @@ function guestminus() {
 }
 
 function periodplus() { 
-    pscore++;
-    document.querySelector(".periodNumber").innerHTML = pscore;
+    if(pscore === 3){
+        
+    }else{
+        pscore++;
+        document.querySelector(".periodNumber").innerHTML = pscore;
+    }
+    
 }
 
 function periodminus() {
     
     if(pscore === 0){
-        
     }else{
         pscore--;
         document.querySelector(".periodNumber").innerHTML = pscore;
