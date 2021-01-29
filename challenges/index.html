@@ -13,40 +13,55 @@
     <div class="scoreboard">
         <div class="left">
             <h1>Home</h1>
-            <div class="a">0</div>
+            <div class="a">
+                <div class="a1">0</div>
+            </div>
+            <button onclick="homeplus()"> Home Score + </button>
+            <button onclick="homeminus()"> Home Score - </button>
+
             <h2>Penalty</h2>
-            <div class="b"></div>
+            <div class="b">
+                <div class="b1">None</div>
+            </div>
+            <button onclick="leftPenaltyPlus()"> Left Penalty + </button>
+            <button onclick="leftPenaltyMinus()"> Left Penalty - </button>
+
         </div>
 
         <div class="middle">
             <h1>Period</h1> 
-            <div class="periodnum">0</div>
+            <div class="periodnum">
+                <div class="periodNumber">0</div>
+            </div>
+            <button onclick="periodplus()"> Period + </button>
+            <button onclick="periodminus()"> Period - </button>
+
+            <div class="reset">
+                <button onclick="resetnum()"> Reset everything </button>
+            </div>
+            
 
         </div>
 
         <div class="right">
             <h1>Guest</h1> 
-            <div class="c">0</div>
+            <div class="c">
+                <div class="c1">0</div>
+            </div>
+            <button onclick="guestplus()"> Guest Score + </button>
+            <button onclick="guestminus()"> Guest Score - </button>
+            
             <h2>Penalty</h2>
-            <div class="d"></div>
+            <div class="d">
+                <div class="d1">None</div>
+            </div>
+            <button onclick="rightPenaltyPlus()"> Right Penalty + </button>
+            <button onclick="rightPenaltyMinus()"> Right Penalty - </button>
         </div>
     </div>
 
     <div class="button">
-        <button onclick="homeplus()"> Home Score + </button>
-        <button onclick="homeminus()"> Home Score - </button>
 
-        <button onclick="guestplus()"> Guest Score + </button>
-        <button onclick="guestminus()"> Guest Score - </button>
-
-        <button onclick="periodplus()"> Period + </button>
-        <button onclick="periodinus()"> Period - </button>
-
-        <button onclick="leftPenaltyPlus()"> Left Penalty + </button>
-        <button onclick="leftPenaltyMinus()"> Left Penalty - </button>
-
-        <button onclick="rightPenaltyPlus()"> Right Penalty + </button>
-        <button onclick="rightPenaltyMinus()"> Right Penalty - </button>
 
     </div>
    

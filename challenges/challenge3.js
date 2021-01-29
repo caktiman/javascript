@@ -26,12 +26,13 @@ var pscore = 0;
 
 
 
+
 // document.querySelector(".a").innerHTML = hscore;
 
 function homeplus() { 
     console.log('+1')
     hscore++;
-    document.querySelector(".a").innerHTML = hscore;
+    document.querySelector(".a1").innerHTML = hscore;
 }
 
 function homeminus() {
@@ -39,14 +40,14 @@ function homeminus() {
 
     }else{
     hscore--;
-    document.querySelector(".a").innerHTML = hscore;
+    document.querySelector(".a1").innerHTML = hscore;
     }
     
 }
 
 function guestplus() { 
     gscore++;
-    document.querySelector(".c").innerHTML = gscore;
+    document.querySelector(".c1").innerHTML = gscore;
 }
 
 function guestminus() {
@@ -55,49 +56,66 @@ function guestminus() {
         
     } else {
         gscore--;
-        document.querySelector(".c").innerHTML = gscore;
+        document.querySelector(".c1").innerHTML = gscore;
     }
 }
 
 function periodplus() { 
-    pscore++;
-    document.querySelector(".periodnum").innerHTML = pscore;
+    if(pscore === 3){
+        
+    }else{
+        pscore++;
+        document.querySelector(".periodNumber").innerHTML = pscore;
+    }
+    
 }
 
 function periodminus() {
     
     if(pscore === 0){
-        
     }else{
         pscore--;
-        document.querySelector(".periodnum").innerHTML = pscore;
+        document.querySelector(".periodNumber").innerHTML = pscore;
     }
   
 }
 
 function leftPenaltyPlus(){
-    let leftname = prompt("Who's wrong?");
-    document.querySelector(".b").innerHTML = leftname;
+    let leftname = prompt("Who?");
+    document.querySelector(".b1").innerHTML = leftname;
 }
 
 function leftPenaltyMinus(){
-    document.querySelector(".b").innerHTML = "";
+    document.querySelector(".b1").innerHTML = "";
 }
 
 function rightPenaltyPlus(){
-    let leftname = prompt("Who's wrong?");
-    document.querySelector(".d").innerHTML = leftname; 
+    let rightname = prompt("Who?");
+    document.querySelector(".d1").innerHTML = rightname; 
 }
 
 function rightPenaltyMinus(){
-    document.querySelector(".d").innerHTML = "";
+    document.querySelector(".d1").innerHTML = "";
+}
+
+function resetnum(){
+    var hscore = 0;
+    var gscore = 0;
+    var pscore = 0;
+    var leftname = "None";
+    var rightname = "None";
+    document.querySelector(".a1").innerHTML = hscore;
+    document.querySelector(".c1").innerHTML = gscore;
+    document.querySelector(".periodNumber").innerHTML = pscore;
+    document.querySelector(".b1").innerHTML = leftname;
+    document.querySelector(".d1").innerHTML = rightname; 
 }
 
 
 
 
-
-if (gscore < 0){
-    gscore++;
-    document.querySelector(".c").innerHTML = gscore;
-}
+//Don't do this because it won't be repeated
+// if (gscore < 0){
+//     gscore++;
+//     document.querySelector(".c").innerHTML = gscore;
+// }

@@ -28,6 +28,14 @@ height:97vh;
     height:10vh;
     background-color: black;
     color:white;
+    font-size: 110px;
+}
+
+.a1{  
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 110px;
 }
 
 .b{
@@ -37,6 +45,12 @@ height:97vh;
     color: white;
 }
 
+.b1{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 110px;
+}
 
 .left > h2{
     color:white;
@@ -66,6 +80,23 @@ height:97vh;
     color:white;
 }
 
+.periodnum > h1{
+    color: white;
+    font-size: 110px;
+    padding-left: 7.5vh;
+}
+
+.periodNumber{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 110px;
+}
+
+.reset{
+    padding-top:10vh;
+}
+
 .right{
     display: flex;
     background-color: #003399;
@@ -88,6 +119,19 @@ height:97vh;
     color:white;
 }
 
+.c1{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 110px;
+}
+
+.right > h2{
+    color:white;
+    font-size: 30px;
+    padding-top: 30vh;
+} 
+
 .d{
     width:50vh;
     height:10vh;
@@ -95,11 +139,13 @@ height:97vh;
     color:white;
 }
 
- .right > h2{
-    color:white;
-    font-size: 30px;
-    padding-top: 30vh;
-} 
+.d1{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 110px;
+}
+
 
 
 
