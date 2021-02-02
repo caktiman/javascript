@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: crimson;
+ 
+}
+
+.cal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75vw;
+    height: 80vh;
+    background-color: coral;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+#input1{
+    background-color: cyan;
+    width: 20vw;
+    height: 5vh;
+    font-size: 4.4vh;
+}
+
+#input2{
+    background-color: lightgreen;
+    width: 20vw;
+    height: 5vh;
+    font-size: 4.4vh;
+}
+
+.answer{
+    background-color: lightgoldenrodyellow;
+    width: 20.2vw;
+    height: 5vh;
+    font-size: 3.8vh;
+}
+
+
+
+.my-button{
+    background-color: red;
+    width: 4.92vw;
+    height: 5vh;
+    font-size: 2vh;
+}

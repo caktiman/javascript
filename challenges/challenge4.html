@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="challenge4.css">
 </head>
 
 <body>
-    <div class="input">
-        <input id ="input1" type="number">
-        <input id ="input2" type="number">
+    <div class="body">
+        <div class="cal">
+            <div class="input">
+                <input id ="input1" type="number">
+                <input id ="input2" type="number">
+            </div>
+        
+            <div class="answer"></div>
+        
+            
+        
+        
+            <div class ="buttons">
+                <button class="my-button" onclick = "plus()">plus</button>
+                <button class="my-button"onclick = "minus()">minus</button>
+                <button class="my-button"onclick = "times()">times</button>
+                <button class="my-button"onclick = "divide()">divide</button>
+            </div>
+        </div>
     </div>
 
-    <div class="answer"></div>
 
-
-    <div class ="buttons">
-        <button onclick = "plus()">plus</button>
-        <button onclick = "minus()">minus</button>
-        <button onclick = "times()">times</button>
-        <button onclick = "divide()">divide</button>
-    </div>
 
     
 
