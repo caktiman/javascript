@@ -48,7 +48,7 @@ function divide(){
     input2 = parseInt(input2);
     final = input1 % input2;
     final2 = input1 / input2;
-    final2 = Math.trunc(final2)
+    final2 = Math.trunc(final2);
     
     document.querySelector(".answer").innerHTML = final2 +" Remainder "+ final;
 }
