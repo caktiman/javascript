@@ -1,0 +1,24 @@
+
+
+ h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.movies{
+    border: 1px solid red;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.moviesytle{
+    border: 1px solid red;
+    
+}
+
+
