@@ -38,6 +38,5 @@ display.innerHTML = "hi"
 
 // 3. Dynamic HTML
 // Using Js to create HTML elemets
-
 var movie ="https://youtube.com"
 display.innerHTML = `<img src="${movie}">`

@@ -1,4 +1,7 @@
-
+*{
+    margin: 0px;
+    border: 0px;
+}
 
 
  h1{
@@ -7,26 +10,27 @@
     align-items: center;
     justify-content: center;
     font-size: 3vh;
+    margin-top: 3vh;
+}
+
+.bottompart{
+    margin-top: 10vh
 }
 
 
 .movie-container{
     width: 100vw;
-    height: 50vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.moviesytle{
-    border: 1px solid black;
-}
 
 .movie{
-    height: 43vh;
+    height: 44vh;
     width: 30vh;
-    margin-top: 1vh;
-    background-color: black;
+    margin-top: 3vh;
+
 }
 
 .movie img {
@@ -35,5 +39,61 @@
     width: 100%;
     height: 100%;
   }
+
+.movienames{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movietext{
+    height: 5vh;
+    width: 30vh;
+    margin-top: 3vh;
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+}
+
+
+.adder{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    
+}
+
+.movietitle{
+    width: 30vw;
+    height:5vh;
+    margin-left: 35vw;
+    margin-top: 3vh;
+}
+
+.movielink{
+    width: 30vw;
+    height:5vh;
+    margin-left: 35vw;
+    margin-top: 1vh;
+}
+
+.inputBox{
+    width: 100%;
+    height: 100%;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+::placeholder {
+    color: red;
+    font-size: 1em;
+    font-style: italic;
+  } 
+
+
+
 
 

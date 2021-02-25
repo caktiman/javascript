@@ -19,3 +19,6 @@ GOOD LUCK 🤹‍♂️
 
 //This shortens the need to type document. blah blah blah
 
+
+let movieName = document.querySelector("#title").value;
+let movieLink = document.querySelector("#link").value;
