@@ -19,18 +19,15 @@ function.sayFruit(element){
 fruit.forEach(function (element) {console.log(element)})
 
 
-
-
 function sayHi{
     console.log(`hi)`)
 }
  
-
 //2. Storing elements in variables
 
 //THhs shit is long, right? Especially if you need to copy& paste this shit everytime.
-document.querySelector(".dis").innerHTML = x+y
-document.querySelector(".dis").innerHTML = x-y
+document.querySelector(".display").innerHTML = x+y
+document.querySelector(".display").innerHTML = x-y
 
 //This shortens the need to type document. blah blah blah
 const display = document.querySelector(".display")
