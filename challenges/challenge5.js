@@ -20,5 +20,64 @@ GOOD LUCK 🤹‍♂️
 //This shortens the need to type document. blah blah blah
 
 
-let movieName = document.querySelector("#title").value;
-let movieLink = document.querySelector("#link").value;
+// 1. get value from inputs
+// 2. update your arrays
+// 3. create new HTML elements using JS and the arrays
+
+//document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+// document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+// document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+// document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+// document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+// document.queryS elector(".movie-container").innerHTML = `<div class="movie"><img src="${}"></div>`
+
+
+
+var links = ['https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2?imbypass=on','https://i.redd.it/zvkhv4x836031.jpg','https://cms.qz.com/wp-content/uploads/2020/09/mulan-china.jpg?quality=80&strip=all&w=1880','https://images-na.ssl-images-amazon.com/images/I/71YoSkShPBL._AC_SL1482_.jpg','https://en.artsdot.com/ADC/Vintage-ImgScreen.nsf/O/V-AC596P/$FILE/Movie_posters-japan_vintage_movie_poster_-_026_.Jpg','https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217']
+var names = ["Joker","X-men: Black Phoenix","Hua Mu Lan","Gemini man","Red Hell","Moonlight"]
+
+
+document.querySelector(".movienames").innerHTML = `<div class="movietext">${names[0]}</div>`
+document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[1]}</div>`
+document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[2]}</div>`
+document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[3]}</div>`
+document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[4]}</div>`
+document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[5]}</div>`
+
+document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${links[0]}"></div>`
+document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[1]}"></div>`
+document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[2]}"></div>`
+document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[3]}"></div>`
+document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[4]}"></div>`
+document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[5]}"></div>`
+
+
+function send(){
+  let movieName = document.querySelector("#title").value;
+  let movieLink = document.querySelector("#link").value;
+  
+  names.unshift(movieName)
+  document.querySelector(".movienames").innerHTML = `<div class="movietext">${names[0]}</div>`
+  document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[1]}</div>`
+  document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[2]}</div>`
+  document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[3]}</div>`
+  document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[4]}</div>`
+  document.querySelector(".movienames").innerHTML += `<div class="movietext">${names[5]}</div>`
+  names.pop()
+
+
+
+  links.unshift(movieLink)
+  document.querySelector(".movie-container").innerHTML = `<div class="movie"><img src="${links[0]}"></div>`
+  document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[1]}"></div>`
+  document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[2]}"></div>`
+  document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[3]}"></div>`
+  document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[4]}"></div>`
+  document.querySelector(".movie-container").innerHTML += `<div class="movie"><img src="${links[5]}"></div>`
+  links.pop()
+}
