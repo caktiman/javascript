@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,65 +6,34 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="challenge3.css">
+        <link rel="stylesheet" href="challenge5.css">
     </head>
     <body>
-    <div class="scoreboard">
-        <div class="left">
-            <h1>Home</h1>
-            <div class="a">
-                <div class="a1">0</div>
-            </div>
-            <button onclick="homeplus()"> Home Score + </button>
-            <button onclick="homeminus()"> Home Score - </button>
-
-            <h2>Penalty</h2>
-            <div class="b">
-                <div class="b1">None</div>
-            </div>
-            <button onclick="leftPenaltyPlus()"> Left Penalty + </button>
-            <button onclick="leftPenaltyMinus()"> Left Penalty - </button>
-
-        </div>
-
-        <div class="middle">
-            <h1>Period</h1> 
-            <div class="periodnum">
-                <div class="periodNumber">0</div>
-            </div>
-            <button onclick="periodplus()"> Period + </button>
-            <button onclick="periodminus()"> Period - </button>
-
-            <div class="reset">
-                <button onclick="resetnum()"> Reset everything </button>
-            </div>
-            
-
-        </div>
-
-        <div class="right">
-            <h1>Guest</h1> 
-            <div class="c">
-                <div class="c1">0</div>
-            </div>
-            <button onclick="guestplus()"> Guest Score + </button>
-            <button onclick="guestminus()"> Guest Score - </button>
-            
-            <h2>Penalty</h2>
-            <div class="d">
-                <div class="d1">None</div>
-            </div>
-            <button onclick="rightPenaltyPlus()"> Right Penalty + </button>
-            <button onclick="rightPenaltyMinus()"> Right Penalty - </button>
-        </div>
-    </div>
-
-    <div class="button">
-
-
-    </div>
-   
         
-       <script src="challenge3.js"></script>
+        
+
+        <h1>Now showing</h1>
+        <div class="movie-container"></div>
+        <div class="movienames"></div>
+
+        <h1 class="bottompart">New Movie</h1>
+        
+        <div class="adder">
+
+            <div class="movietitle">
+                <input class="inputBox" id="title" placeholder="Movie name here" type="text">
+            </div>
+
+            <div class="movielink">
+                <input class="inputBox" id="link" placeholder="Movie link here" type="text">
+            </div>  
+
+            <div class="movielink">
+                <button class="inputBox" onclick = "send()">Send</button>
+            </div>
+               
+        </div>
+      
+        <script src="challenge5.js"></script>
     </body>
 </html>
