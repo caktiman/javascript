@@ -47,7 +47,7 @@ boysTraits.push (`dsfsdfsdfsf`)
 //unshift() addes to the FRONT of the array
 boysTraits.unshift(`intellignet`)
 
-//remove fom an array using pop(
+//remove fom an array using pop()
 //pop() removes teh last tiem in the array
 
 boysTraits.pop()

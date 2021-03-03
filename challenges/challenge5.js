@@ -40,49 +40,55 @@ GOOD LUCK 🤹‍♂️
 
 var links = ['https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2?imbypass=on','https://i.redd.it/zvkhv4x836031.jpg','https://cms.qz.com/wp-content/uploads/2020/09/mulan-china.jpg?quality=80&strip=all&w=1880','https://images-na.ssl-images-amazon.com/images/I/71YoSkShPBL._AC_SL1482_.jpg','https://en.artsdot.com/ADC/Vintage-ImgScreen.nsf/O/V-AC596P/$FILE/Movie_posters-japan_vintage_movie_poster_-_026_.Jpg','https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217']
 var names = ["Joker","X-men: Black Phoenix","Hua Mu Lan","Gemini man","Red Hell","Moonlight"]
-var numbers =[1,2,3,4,5,6]
 const displayname = document.querySelector(".movienames")
 const displaylink = document.querySelector(".movie-container")
-
-
-
-displayname.innerHTML = `<div class="movietext">${numbers[0]}  <br> ${names[0]}</div>`
-displayname.innerHTML += `<div class="movietext">${numbers[1]} <br> ${names[1]}</div>`
-displayname.innerHTML += `<div class="movietext">${numbers[2]} <br> ${names[2]}</div>`
-displayname.innerHTML += `<div class="movietext">${numbers[3]} <br> ${names[3]}</div>`
-displayname.innerHTML += `<div class="movietext">${numbers[4]} <br> ${names[4]}</div>`
-displayname.innerHTML += `<div class="movietext">${numbers[5]} <br> ${names[5]}</div>`
-
-displaylink.innerHTML = `<div class="movie"><img src="${links[0]}"></div>`
-displaylink.innerHTML += `<div class="movie"><img src="${links[1]}"></div>`
-displaylink.innerHTML += `<div class="movie"><img src="${links[2]}"></div>`
-displaylink.innerHTML += `<div class="movie"><img src="${links[3]}"></div>`
-displaylink.innerHTML += `<div class="movie"><img src="${links[4]}"></div>`
-displaylink.innerHTML += `<div class="movie"><img src="${links[5]}"></div>`
-
-
-function send(){
-  let movieName = document.querySelector("#title").value;
-  let movieLink = document.querySelector("#link").value;
   
+names.forEach(changeTitles) 
+links.forEach(changeLinks)
+
+function buttonPressed() {
+  displaylink.innerHTML = ` `
+  displayname.innerHTML = ` `
+
+  let movieName = document.querySelector("#title").value;
   names.unshift(movieName)
-  displayname.innerHTML = `<div class="movietext">${numbers[0]}  <br> ${names[0]}</div>`
-  displayname.innerHTML += `<div class="movietext">${numbers[1]} <br> ${names[1]}</div>`
-  displayname.innerHTML += `<div class="movietext">${numbers[2]} <br> ${names[2]}</div>`
-  displayname.innerHTML += `<div class="movietext">${numbers[3]} <br> ${names[3]}</div>`
-  displayname.innerHTML += `<div class="movietext">${numbers[4]} <br> ${names[4]}</div>`
-  displayname.innerHTML += `<div class="movietext">${numbers[5]} <br> ${names[5]}</div>`
   names.pop()
 
-
-
+  let movieLink = document.querySelector("#link").value;
   links.unshift(movieLink)
-  displaylink.innerHTML = `<div class="movie"><img src="${links[0]}"></div>`
-  displaylink.innerHTML += `<div class="movie"><img src="${links[1]}"></div>`
-  displaylink.innerHTML += `<div class="movie"><img src="${links[2]}"></div>`
-  displaylink.innerHTML += `<div class="movie"><img src="${links[3]}"></div>`
-  displaylink.innerHTML += `<div class="movie"><img src="${links[4]}"></div>`
-  displaylink.innerHTML += `<div class="movie"><img src="${links[5]}"></div>`
   links.pop()
+  names.forEach(changeTitles) 
+  links.forEach(changeLinks)
 }
 
+function changeTitles(elements, index){
+  // 1. Edit the array
+  // 2. Display the movies
+  displayname.innerHTML += `<div class="movietext">${index+1} <br> ${names[index]}</div>`  
+  // You can also use element to replace "names[index]" because it will just write in the array elements each time. Example below
+  // displaylink.innerHTML += `<div class="movietext">${index+1} <br> ${names[index]}</div>`
+}
+
+function changeLinks(elements, index) {
+  displaylink.innerHTML += `<div class="movie"><img src="${links[index]}"></div>`  //Same for here.
+}
+
+
+
+// displayname.innerHTML = `<div class="movietext">${numbers[0]}  <br> ${names[0]}</div>`
+// displayname.innerHTML += `<div class="movietext">${numbers[1]} <br> ${names[1]}</div>`
+// displayname.innerHTML += `<div class="movietext">${numbers[2]} <br> ${names[2]}</div>`
+// displayname.innerHTML += `<div class="movietext">${numbers[3]} <br> ${names[3]}</div>`
+// displayname.innerHTML += `<div class="movietext">${numbers[4]} <br> ${names[4]}</div>`
+// displayname.innerHTML += `<div class="movietext">${numbers[5]} <br> ${names[5]}</div>`
+
+// displaylink.innerHTML = `<div class="movie"><img src="${links[0]}"></div>`
+// displaylink.innerHTML += `<div class="movie"><img src="${links[1]}"></div>`
+// displaylink.innerHTML += `<div class="movie"><img src="${links[2]}"></div>`
+// displaylink.innerHTML += `<div class="movie"><img src="${links[3]}"></div>`
+// displaylink.innerHTML += `<div class="movie"><img src="${links[4]}"></div>`
+// displaylink.innerHTML += `<div class="movie"><img src="${links[5]}"></div>`
+
+
+// 
+// 
