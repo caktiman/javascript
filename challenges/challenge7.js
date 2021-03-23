@@ -1,10 +1,12 @@
 
 function start(){
-    
+    var enter = doucment.getElementNById('start')
 }
 
 function quit(){
     window.close()
 }
 
-press.addEventListener('Enter')
+enter.addEventListener('enter',function(){
+  alert("it works");
+},false);
