@@ -57,6 +57,7 @@ function buttonPressed() {
   let movieLink = document.querySelector("#link").value;
   links.unshift(movieLink)
   links.pop()
+  
   names.forEach(changeTitles) 
   links.forEach(changeLinks)
 }
@@ -66,7 +67,7 @@ function changeTitles(elements, index){
   // 2. Display the movies
   displayname.innerHTML += `<div class="movietext">${index+1} <br> ${names[index]}</div>`  
   // You can also use element to replace "names[index]" because it will just write in the array elements each time. Example below
-  // displaylink.innerHTML += `<div class="movietext">${index+1} <br> ${names[index]}</div>`
+  // displaylink.innerHTML += `<div class="movietext">${index+1} <br> ${elements}</div>`
 }
 
 function changeLinks(elements, index) {
