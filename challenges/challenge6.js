@@ -133,7 +133,7 @@ for ( i=0; i<1; i++){    //Repeat 7 times
 document.write("<br>")
 document.write("<br>")
 
-for ( i=0; i<1; i++){    //Repeat 7 times
+for ( i=0; i<1; i++){    //Repeat 1 times
 
     for(q=0;q<6;q++){
         document.write(`~`) 
@@ -196,9 +196,19 @@ for ( i=0; i<1; i++){    //Repeat 7 times
     document.write("<br>")
 }
 document.write("<br>")
+document.write("<br>")
+
 
 
 for ( i=0; i<1; i++){    //Repeat 7 times
+
+    for (l=0;l<1;l++){   
+        document.write(`🦴`) //Repeat 1 time  
+    } 
+    document.write("<br>")
+    document.write("<br>")
+
+
 
     for (l=0;l<1;l++){   
         document.write(`🦴`) //Repeat 1 time  
@@ -209,31 +219,70 @@ for ( i=0; i<1; i++){    //Repeat 7 times
         document.write(`🦴`) //Repeat 2 times  
     }
     document.write("<br>")
-
-    for (l=0; l<3; l++){
-        document.write(`🦴`) //Repeat 2 times  
-    }
     document.write("<br>")
 
-    for (m=0;m<4;m++){   
+
+
+    
+    for (l=0;l<1;l++){   
         document.write(`🦴`) //Repeat 1 time  
     } 
     document.write("<br>")
 
+    for (k=0; k<2; k++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    for (l=0; l<3; l++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    document.write("<br>")
+    
+
+    for (l=0;l<1;l++){   
+        document.write(`🦴`) //Repeat 1 time  
+    } 
+    document.write("<br>")
+
+    for (k=0; k<2; k++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    for (l=0; l<3; l++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    for (m=0;m<4;m++){   
+        document.write(`🦴`) //Repeat 1 time  
+    } 
+    document.write("<br>")
+    document.write("<br>")
+
+
+
+    for (l=0;l<1;l++){   
+        document.write(`🦴`) //Repeat 1 time  
+    } 
+    document.write("<br>")
+
+    for (k=0; k<2; k++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    for (l=0; l<3; l++){
+        document.write(`🦴`) //Repeat 2 times  
+    }
+    document.write("<br>")
+    for (m=0;m<4;m++){   
+        document.write(`🦴`) //Repeat 1 time  
+    } 
+    document.write("<br>")
     for (n=0; n<5; n++){
         document.write(`🦴`) //Repeat 2 times  
     }
     document.write("<br>")
 
-    for (o=0; o<6; o++){
-        document.write(`🦴`) //Repeat 2 times  
-    }
-    document.write("<br>")
 
-    for (p=0; p<7; p++){
-        document.write(`🦴`) //Repeat 2 times  
-    }
-    document.write("<br>")
+document.write("<br>")
 }
-document.write("<br>")
-document.write("<br>")
