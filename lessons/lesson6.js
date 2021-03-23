@@ -10,7 +10,7 @@ const fruit = [`apple`, `banana`, `orange`, `pine`]
 
 fruit.forEach(sayFruit);
 
-function.sayFruit(element){
+function sayFruit(element){
     console.log(element)
     
 }
