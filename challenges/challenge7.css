@@ -1,29 +1,30 @@
 * {
     margin: 0;
     padding: 0;
-    background-color:black;
+    background-color: #01031c;
 }
 
 #title {
+    margin-top: 2vh;
     text-align: center;
     font-size: 2rem;
-    color: rgb(185, 9, 9);
+    color: #f75b50;
 }
 
 
 #description {
-   
+    margin-top: 2vh;
+    font-size: 1.7rem;
     flex-direction: column;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 3vh;
     color: white;
 }
 
 #options {
     display: flex;
-    margin-top: 5vh;
+    margin-top: 3vh;
     justify-content: center;
     flex-direction: column;
     align-items:center;  
@@ -34,9 +35,12 @@
     width: 100vw;
 }
 
-#image{
+#bgimg{
     width: 100vw;
     height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/void.png');
 }
 
 .lowerBody{
@@ -48,14 +52,36 @@
 
 
 .option1{
-    width:20vw;
+    width:40vw;
     height:5vh;
-    color: red;
+    font-size: 1.2rem;
+    border-color:#f75b50 ;
+    border-radius: 0.5vh;
+    color: white;
+    display: none;
+    transition: 1s;
+    transform: translateY(30px);
+    opacity: 0;
 }
 
 .option2{
-    width:20vw;
+    margin-top: 2vh;
+    width:40vw;
     height:5vh;
-    color: red;
+    font-size: 1.2rem;
+    border-color:#f75b50 ;
+    border-radius: 0.5vh;
+    color: white;
+    display: none;
+    transition: 1s;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+
+
+.picture {
+    height: 100%;
+    width: 100%;
 }
 
