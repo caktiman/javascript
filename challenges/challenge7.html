@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,19 +6,31 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="challenge7.css">
     </head>
     <body>
-        <div id = "title">
-            <h1></h1>
+    <div class="main">
+        <div id = "image"></div>
+
+        <div class="lowerBody">
+
+            <h1 id = "title">Helltaker</h1>
+    
+            <div id = "description">
+                <h2>You find yourself surrounded by the void.<br>Press [enter or A] to continue</h2>
+            </div>
+    
+            <div id="options">
+                <button class="option1" onclick = "start()">Begin your nightmare</button>
+                <button class="option2" onclick = "quit()">End your suffering</button>
+            </div>
+                
+           
         </div>
+    </div>
+       
 
-        <div id = options>
-            <button class="style" onclick = "start()">Begin your nightmare</button>
-            <button class="toggle" onclick = "quit()">End your suffering</button>
-        </div>
-
-
+       
         
         <script src="challenge7.js"></script>
     </body>

@@ -1,4 +1,6 @@
 
+document.querySelector("#image").style.backgroundImage = "images\Beelzebub.png"
+
 function start(){
     var enter = doucment.getElementNById('start')
 }
