@@ -54,26 +54,42 @@ function vTuber(){
   
 }
 
-
-
-
 function vTuberEnd(event){
 
   if (event.keyCode === 13) {
     event.preventDefault();
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
-    document.getElementById("title").innerHTML=""
+    document.getElementById("title").innerHTML="Developer"
     document.getElementById("description").innerHTML="You decided to fall for any pitfall, time for VTuber!!!"
   }
 
 }
 
 function start(){
+  document.removeEventListener("keyup", mainMenu)
 
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+  document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="You really like the story, eh? Fine, I will tell it again…"
+  
+  document.addEventListener("keyup", noGirl)
 
-
-  document.querySelector('.option2').onclick = myNewFunction
 }
+
+function noGirl(){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    // document.removeEventListener("keyup", start)
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/woke up.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="You woke up wanting to have a girlfriend because you have NONE!!!"  
+  }
+}
+
+
 
 
 
