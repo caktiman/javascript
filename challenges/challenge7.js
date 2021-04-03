@@ -1,8 +1,15 @@
+var introMusic = new Audio("../game audio/Apropos.mp3")
+var vtuberMusic = new Audio("../game Audio/Shiny Smily Story Instrumental.mp3")
+var mainMusic = new Audio("../game Audio/Vitality VIP Edit.mp3")
+var bossMusic = new Audio("../game Audio/Epitomize Sinners VIP")
+var endMusic = new Audio("../game Audio/Luminescent.mp3")
+
+introMusic.play()
 
 document.addEventListener("keyup", pressEnter)
 
-
 function pressEnter(event) {
+  
   if (event.keyCode === 13) {
    event.preventDefault();
    initiation()
@@ -44,7 +51,10 @@ function mainMenu(event) {
 }
 
 function vTuber(){
+  introMusic.load()
+  vtuberMusic.play()
   document.removeEventListener("keyup", pressEnter)
+  
   
   document.querySelector('#bgimg').style.backgroundImage = "url('https://pbs.twimg.com/profile_banners/1283657064410017793/1607874974/1500x500')"
   document.getElementById("title").innerHTML="Developer"
@@ -85,9 +95,38 @@ function noGirl(){
     // document.removeEventListener("keyup", start)
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/woke up.png')"
     document.getElementById("title").innerHTML=""
-    document.getElementById("description").innerHTML="You woke up wanting to have a girlfriend because you have NONE!!!"  
+    document.getElementById("description").innerHTML="You woke up wanting to have a girlfriend because you have NONE!!!"
+    
+    document.removeEventListener("keyup", noGirl) 
+    document.addEventListener("keyup", dressedUp)
   }
 }
+
+function dressedUp(){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/dressed up.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Anyway, you decided to take action, and you realized that humans sucks, so you decided to have something elusive. Demon girls! What a fine taste you have, eh?"  
+  
+    document.removeEventListener("keyup", dressedUp) 
+    document.addEventListener("keyup", determination)
+  }
+}
+
+function determination(){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/determination.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="You have nothing to lose anyway, so you decided to drive down to hell with a beloved modified “Bloody Mary”"  
+  
+    document.removeEventListener("keyup", determination) 
+    document.addEventListener("keyup", beginsJourney)
+  }
+}
+
+
 
 
 
