@@ -78,8 +78,8 @@ function vTuberEnd(event){
 function start(){
   document.removeEventListener("keyup", mainMenu)
 
-  document.querySelector('.option1').style.display = ""
-  document.querySelector('.option2').style.display = ""
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
   document.querySelector('#bgimg').style.backgroundImage = "url('none')"
   document.querySelector('#bgimg').style.backgroundColor = "#01031c"
   document.getElementById("title").innerHTML=""
@@ -126,14 +126,13 @@ function determination(){
     document.querySelector('.option1').style.opacity = "1"
     document.querySelector('.option1').style.transform = "none"
     document.querySelector('.option1').onclick = firstTransition
-
-    document.removeEventListener("keyup", determination)
-    document.removeEventListener("keyup", pandemonia)
     
+
   }
 }
 
 function firstTransition(){
+  document.removeEventListener("keyup", determination)   
   introMusic.load()
   mainMusic.play()
   
@@ -142,8 +141,10 @@ function firstTransition(){
   document.getElementById("title").innerHTML=""
   document.getElementById("description").innerHTML="As you traveled  into the hell, you met a girl dressed up as an OL, sipping her coffee."
 
-  document.removeEventListener("keyup", firstTransition) 
-  document.addEventListener("keyup", pandemonia)
+  document.removeEventListener("onclick", firstTransition) 
+  setTimeout(() => {
+    document.addEventListener("keyup", pandemonia)
+  }, 500);
 }
 
 function pandemonia(event){
@@ -165,28 +166,91 @@ function pandemoniaChoice(event) {
     document.querySelector('.option2').style.display = "block"
     document.querySelector('.option1').innerHTML = "We can figure something out at my place"
     document.querySelector('.option2').innerHTML = "Maybe I can serve YOU instead?"
-    document.querySelector('.option1').onclick = panSuccess
+
+    
     document.querySelector('.option1').onclick = panFail
+    document.querySelector('.option2').onclick = panSuccess
+    document.removeEventListener("keyup", pandemoniaChoice) 
+    document.addEventListener("keyup", panChoicePop)
+  }
+}
+
+function panChoicePop(event){
+  if (event.keyCode === 13 ) { 
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option1').style.opacity = "0"
+    document.querySelector('.option2').style.opacity = "0"
+    document.querySelector('.option1').style.transform = "0"
+    document.querySelector('.option2').style.transform = "0"
+
+
+
 
     setTimeout(() => {
-      
       document.querySelector('.option1').style.opacity = "1"
       document.querySelector('.option1').style.transform = "none"
-      
       document.querySelector('.option2').style.opacity = "1"
       document.querySelector('.option2').style.transform = "none"
-      
-    }, 200)
+    }, 100)
+
+    document.removeEventListener("keyup", panChoicePop) 
+  }
+
+}
+
+function panFail(event){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/Pandemonia.png')"
+  document.getElementById("title").innerHTML="Pandemonia, the Tired Demon"
+  document.getElementById("description").innerHTML="You thought you’re leaving hell alive? How delusional."
+
+  document.removeEventListener("onclick", panFail)
+  document.addEventListener("keyup", pandFailFail)
+}
+
+function pandFailFail(event){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="She took your face in her hands and snapped your neck with professional gentleness."  
+  
+    document.removeEventListener("keyup", pandFailFail) 
   }
 }
 
 function panSuccess(event) {
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/Pandemonia Success.png')"
+  document.getElementById("title").innerHTML="Pandemonia, the Tired Demon"
+  document.getElementById("description").innerHTML="Sweet of you to offer. I could really use some coffee. I’m not myself without it." 
+
+  document.removeEventListener("onclick", panSuccess) 
+  document.addEventListener("keyup", modeusChoice)
+}
+
+function modeusChoice(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/Modeus.png')"
+    document.getElementById("title").innerHTML="Modeus, the lustful Demon"
+    document.getElementById("description").innerHTML="You and me. Now."
+
+    document.querySelector('.option1').innerHTML = "Deal. No question asked."
+    document.querySelector('.option2').innerHTML = "No time. Busy gathering girls."  
+    document.querySelector('.option1').onclick = modeFail
+    document.querySelector('.option2').onclick = modeSuccess
+    document.removeEventListener("keyup", modeusChoice) 
+    document.addEventListener("keyup", mainMenu)
+  }
   
 }
 
-function pandFail(event){
-
-}
 
 
 
