@@ -89,10 +89,9 @@ function start(){
 
 }
 
-function noGirl(){
+function noGirl(event){
   if (event.keyCode === 13) {
     event.preventDefault();
-    // document.removeEventListener("keyup", start)
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/woke up.png')"
     document.getElementById("title").innerHTML=""
     document.getElementById("description").innerHTML="You woke up wanting to have a girlfriend because you have NONE!!!"
@@ -114,7 +113,7 @@ function dressedUp(){
   }
 }
 
-function determination(){
+function determination(event){
   if (event.keyCode === 13) {
     event.preventDefault();
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/determination.png')"
@@ -346,7 +345,7 @@ function cerChoice(event) {
     document.querySelector('.option2').innerHTML = "Sure, why not?"  
     document.querySelector('.option1').onclick = cerFail
     document.querySelector('.option2').onclick = cerSuccess
-    document.removeEventListener("keyup", cerberusChoice) 
+    document.removeEventListener("keyup", cerChoice) 
 
     setTimeout(() => {
     document.addEventListener("keyup", cerChoicePop)
@@ -425,12 +424,12 @@ function fourthTransition() {
   document.removeEventListener("onclick", fourthTransition) 
 
   setTimeout(() => {
-    document.addEventListener("keyup", malinaChoice)
+    document.addEventListener("keyup", maChoice)
   }, 100);
 }
 
 
-function malinaChoice(event) {
+function maChoice(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/Malina.png')"
@@ -441,7 +440,7 @@ function malinaChoice(event) {
     document.querySelector('.option2').innerHTML = "I’d sure love to play with you."  
     document.querySelector('.option1').onclick = maFail
     document.querySelector('.option2').onclick = maSuccess
-    document.removeEventListener("keyup", malinaChoice) 
+    document.removeEventListener("keyup", maChoice) 
 
     setTimeout(() => {
     document.addEventListener("keyup", maChoicePop)
@@ -465,7 +464,7 @@ function maChoicePop(event){
       document.querySelector('.option2').style.transform = "none"
     }, 100)
 
-    document.removeEventListener("keyup", cerChoicePop) 
+    document.removeEventListener("keyup", maChoicePop) 
   }
 }
 
@@ -511,10 +510,498 @@ function maSuccess (){
   document.addEventListener("keyup", fifthTransition)
 }
 
+function fifthTransition() {  
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/red light.jpg')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="Finished a long chat with Malina about how much fun you can have from booze and games, you decide to move towards that sick a** tower you want to go. Cuz why not? As you strolled on the streets, you saw a demon looking at your harem. Interested."
+  document.removeEventListener("onclick", fifthTransition) 
+
+  setTimeout(() => {
+    document.addEventListener("keyup", zChoice)
+  }, 100);
+}
+
+function zChoice(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/zdrada.png')"
+    document.getElementById("title").innerHTML="Zdrada, the Bitch Demon"
+    document.getElementById("description").innerHTML="Yo, I’ve heard about your harem. I’m in."
+
+    document.querySelector('.option1').innerHTML = "It’s not really a harem anymore. We just play turn based strategies"
+    document.querySelector('.option2').innerHTML = "Wait. I have a feeling I’ll regret it."  
+    document.querySelector('.option1').onclick = zFail
+    document.querySelector('.option2').onclick = zSuccess
+    document.removeEventListener("keyup", zChoice) 
+
+    setTimeout(() => {
+    document.addEventListener("keyup", zChoicePop)
+    }, 100)
+  }
+}
+
+function zChoicePop(event){
+  if (event.keyCode === 13 ) { 
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option1').style.opacity = "0"
+    document.querySelector('.option2').style.opacity = "0"
+    document.querySelector('.option1').style.transform = "translateY(30px)"
+    document.querySelector('.option2').style.transform = "translateY(30px)"
+
+    setTimeout(() => {
+      document.querySelector('.option1').style.opacity = "1"
+      document.querySelector('.option2').style.opacity = "1"
+      document.querySelector('.option1').style.transform = "none"
+      document.querySelector('.option2').style.transform = "none"
+    }, 100)
+
+    document.removeEventListener("keyup", zChoicePop) 
+  }
+}
+
+function zFail(event){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/zdrada.png')"
+  document.getElementById("title").innerHTML="Zdrada, the Bitch Demon"
+  document.getElementById("description").innerHTML="Holy sx!t. Let me put you out of your misery."
+
+  document.removeEventListener("onclick", zFail)
+  document.addEventListener("keyup", zFailFail)
+}
 
 
+function zFailFail(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Your vision swam. The last thing you noticed was a knife buried hilt deep between your ribs."  
+  
+    document.removeEventListener("keyup", zFailFail) 
+  }
+
+}
+function zSuccess (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/zdrada success.png')"
+  document.getElementById("title").innerHTML="Zdrada, the Bitch Demon"
+  document.getElementById("description").innerHTML="Too bad, I’m coming anyway/ Go ahead, try to stop me." 
+
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').style.opacity = "1"
+  document.querySelector('.option1').style.transform = "none"
+  document.querySelector('.option1').onclick = sixthTransition
+
+  document.removeEventListener("onclick", zSuccess) 
+  document.addEventListener("keyup", sixthTransition)
+}
+
+function sixthTransition() {  
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/angel.jpg')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="You realized what you have done. This is a nightmare!!! But you have no way of turning back so you kept walking. As you regret for what you did. You saw an angel scribbling something on her little note. Your eyes met hers. S**t, the classic cliche."
+  document.removeEventListener("onclick", sixthTransition) 
+
+  setTimeout(() => {
+    document.addEventListener("keyup", azaChoice)
+  }, 100);
+}
+
+function azaChoice(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/azazel.png')"
+    document.getElementById("title").innerHTML="Azazel, the Curious Angel."
+    document.getElementById("description").innerHTML="Oh my heaven! What would a living human be doing in hell? Most unusual."
+
+    document.querySelector('.option1').innerHTML = "Looking for angels."
+    document.querySelector('.option2').innerHTML = "Looking for demons."  
+    document.querySelector('.option1').onclick = azaHeaven
+    document.querySelector('.option2').onclick = azaSuccess
+    document.removeEventListener("keyup", azaChoice) 
+
+    setTimeout(() => {
+    document.addEventListener("keyup", azaChoicePop)
+    }, 100)
+  }
+}
+
+function azaChoicePop(event){
+  if (event.keyCode === 13 ) { 
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option1').style.opacity = "0"
+    document.querySelector('.option2').style.opacity = "0"
+    document.querySelector('.option1').style.transform = "translateY(30px)"
+    document.querySelector('.option2').style.transform = "translateY(30px)"
+
+    setTimeout(() => {
+      document.querySelector('.option1').style.opacity = "1"
+      document.querySelector('.option2').style.opacity = "1"
+      document.querySelector('.option1').style.transform = "none"
+      document.querySelector('.option2').style.transform = "none"
+    }, 100)
+
+    document.removeEventListener("keyup", azaChoicePop) 
+  }
+}
+
+function azaHeaven(event){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+  document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="Who would’ve guessed that lying will get you into heaven."
+
+  document.removeEventListener("onclick", azaHeaven)
+  document.addEventListener("keyup", azaHeavenSuccess)
+}
 
 
+function azaHeavenSuccess(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/heaven.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Say goodbye to your demon harem, though."  
+  
+    document.removeEventListener("keyup", azaHeavenSuccess) 
+  }
+
+}
+function azaSuccess (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/azazel success.png')"
+  document.getElementById("title").innerHTML="Azazel, the Curious Angel"
+  document.getElementById("description").innerHTML="Oh, you too? Let me guess, thesis on Modern Sin? Or is it Demonology? We should join forces." 
+
+  document.removeEventListener("onclick", azaSuccess) 
+  document.addEventListener("keyup", seventhTransition)
+}
+
+function seventhTransition(event) {  
+  if (event.keyCode === 13) {
+
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "Hey, can't blame me."
+    document.querySelector('.option1').style.opacity = "1"
+    document.querySelector('.option1').style.transform = "none"
+    document.querySelector('.option1').onclick = jusChoice
+    document.querySelector('.option2').style.display = ""
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bridge.jpg')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Yay… Even an angel joining your forces. You sure have a hard time eh? Moving on, you crossed a bridge and found a little puzzle. You solved it. Why? Ask yourself. And yeah… a demon tried to flirt with you. Lucky bastard..."
+    document.removeEventListener("keyup", seventhTransition) 
+  }
+}
+
+function jusChoice(event) {
+
+    event.preventDefault();
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/justice.png')"
+    document.getElementById("title").innerHTML="Justice, the Awesome Demon"
+    document.getElementById("description").innerHTML="Oh my heaven! What would a living human be doing in hell? Most unusual."
+
+    document.querySelector('.option1').innerHTML = "It took some work. Wanna join my harem?"
+    document.querySelector('.option2').innerHTML = "I just skipped it in the menu. Wanna join my harem?"  
+    document.querySelector('.option1').onclick = jusSuccess1
+    document.querySelector('.option2').onclick = jusSuccess2
+    document.removeEventListener("onclick", jusChoice) 
+
+    setTimeout(() => {
+    document.addEventListener("keyup", jusChoicePop)
+    }, 100)
+}
+
+function jusChoicePop(event){
+  if (event.keyCode === 13 ) { 
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option1').style.opacity = "0"
+    document.querySelector('.option2').style.opacity = "0"
+    document.querySelector('.option1').style.transform = "translateY(30px)"
+    document.querySelector('.option2').style.transform = "translateY(30px)"
+
+    setTimeout(() => {
+      document.querySelector('.option1').style.opacity = "1"
+      document.querySelector('.option2').style.opacity = "1"
+      document.querySelector('.option1').style.transform = "none"
+      document.querySelector('.option2').style.transform = "none"
+    }, 100)
+
+    document.removeEventListener("keyup", jusChoicePop) 
+  }
+}
+
+function jusSuccess1 (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/justice success.png')"
+  document.getElementById("title").innerHTML="Justice, the Awesome Demon"
+  document.getElementById("description").innerHTML="That totally sounds like something I would’ve done. Sure, let’s go. The more the merrier, right?" 
+
+  document.removeEventListener("onclick", jusSuccess1) 
+  document.addEventListener("keyup", eighthTransition)
+}
+
+function jusSuccess2 (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/justice success.png')"
+  document.getElementById("title").innerHTML="Justice, the Awesome Demon"
+  document.getElementById("description").innerHTML="You don't have to ask me. I'd never miss a party" 
+
+  document.removeEventListener("onclick", jusSuccess2) 
+  document.addEventListener("keyup", eighthTransition)
+}
+
+function eighthTransition(event) {  
+  if (event.keyCode === 13) {
+
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "Fine, fine, I get it."
+    document.querySelector('.option1').style.opacity = "1"
+    document.querySelector('.option1').style.transform = "none"
+    document.querySelector('.option1').onclick = luciChoice
+    document.querySelector('.option2').style.display = ""
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/tower.jpg')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Finally, you reached your destination. The tower. You took an elevator to the top floor. Why? How the hell am I supposed to know? Geez… Anyway, you saw Lucifer sitting on a comfy sofa and sipping her wine. You ask me how I know my name? SOMETIMES THERE ARE THING YOU SHOULDN’T KNOW/ASK..."
+    document.removeEventListener("keyup", eighthTransition) 
+  }
+}
+
+function luciChoice() {
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer.png')"
+    document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+    document.getElementById("description").innerHTML="We meet at last. You’ve proved yourself worthy by passing all my trials."
+
+    document.removeEventListener("onclick", luciChoice) 
+
+    setTimeout(() => {
+    document.addEventListener("keyup", luciChoice2)
+    }, 100)
+}
+
+function luciChoice2(event) {
+  if (event.keyCode === 13 ) { 
+  event.preventDefault();
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="Pledge your soul to me and I’ll make you my most treasured slave."
+
+  document.querySelector('.option1').innerHTML = "Ye ma quean! (Yes my queen)"
+  document.querySelector('.option2').innerHTML = "No, thanks. But you can join my harem"  
+  document.querySelector('.option1').onclick = luciFail1
+  document.querySelector('.option2').onclick = luciConfuse
+  document.removeEventListener("keyup", luciChoice2) 
+  }
+
+  setTimeout(() => {
+  document.addEventListener("keyup", luciChoicePop)
+  }, 100)
+}
+
+function luciChoicePop(event){
+  if (event.keyCode === 13 ) { 
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option1').style.opacity = "0"
+    document.querySelector('.option2').style.opacity = "0"
+    document.querySelector('.option1').style.transform = "translateY(30px)"
+    document.querySelector('.option2').style.transform = "translateY(30px)"
+
+    setTimeout(() => {
+      document.querySelector('.option1').style.opacity = "1"
+      document.querySelector('.option2').style.opacity = "1"
+      document.querySelector('.option1').style.transform = "none"
+      document.querySelector('.option2').style.transform = "none"
+    }, 100)
+
+    document.removeEventListener("keyup", luciChoicePop) 
+  }
+}
+
+function luciFail1(){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="Eager little soul…"
+
+  document.removeEventListener("onclick", luciFail1)
+  document.addEventListener("keyup", luciFailFail1)
+}
+
+function luciFailFail1(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="As you knelt, she planted a kiss of your forehead, and your life melted away."  
+  
+    document.removeEventListener("keyup", luciFailFail1) 
+  }
+}
+
+function luciConfuse(){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer confused.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="What are you trying to accomplish? You think you can enslave demons to your will?"
+
+  document.querySelector('.option1').innerHTML = "Call me master. And ask for permission before you speak."
+  document.querySelector('.option2').innerHTML = "I can offer coffee, turn based strategies and chocolate pancakes."  
+  document.querySelector('.option1').onclick = luciFail2
+  document.querySelector('.option2').onclick = luciSuccess
+  document.removeEventListener("onclick", luciConfuse)
+  document.addEventListener("keyup", luciChoicePop)
+}
+
+function luciFail2(){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer confused.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="I see I have to teach you your place."
+
+  document.removeEventListener("onclick", luciFail2)
+  document.addEventListener("keyup", luciFailFail2)
+}
+
+function luciFailFail2(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="She made a hand gesture, and all your blood turned into vinegar.It’s hard to explain the feel."  
+  
+    document.removeEventListener("keyup", luciFailFail2) 
+  }
+}
+
+function luciSuccess (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer confused.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="Really? Is that it? You come here, and try to buy me over with pancakes?" 
+
+  document.removeEventListener("onclick", luciSuccess) 
+  document.addEventListener("keyup", luciSuccess2)
+}
+
+function luciSuccess2 (event){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer success.png')"
+    document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+    document.getElementById("description").innerHTML="You’re lucky I have a thing for pancakes." 
+  
+    document.removeEventListener("keyup", luciSuccess2) 
+    document.addEventListener("keyup", luciSuccess3)
+  }
+}
+
+function luciSuccess3 (event){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.option1').style.display = ""
+    document.querySelector('.option2').style.display = ""
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/lucifer success.png')"
+    document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+    document.getElementById("description").innerHTML="I think you’ve convinced me. That harem of yours may prove to be entertaining after all." 
+  
+    document.removeEventListener("keyup", luciSuccess3) 
+    document.addEventListener("keyup", midTransition)
+  }
+}
+
+function midTransition(event) {  
+  if (event.keyCode === 13) {
+
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "What?"
+    document.querySelector('.option1').style.opacity = "1"
+    document.querySelector('.option1').style.transform = "none"
+    document.querySelector('.option1').onclick = moreWillBeComingUp
+    document.querySelector('.option2').style.display = ""
+
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
+    document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+    document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="There you go. You got yourself the ultimate harem. Even the CEO was mesmerised by you.AND~~~~~"
+    document.removeEventListener("keyup", midTransition) 
+  }
+}
+
+// function question (){
+//     event.preventDefault();
+//     document.querySelector('.option1').style.display = "none"
+//     document.querySelector('.option2').style.display = "none"
+//     document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+//     document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+//     document.getElementById("title").innerHTML="???"
+//     document.getElementById("description").innerHTML="YOU TRULY THOUGHT YOU COULD JUST WALK AWAY? AFTER ALL YOU HAVE DONE?" 
+  
+//     document.removeEventListener("onclick", question) 
+//     document.addEventListener("keyup", midTransition)
+// }
+
+function moreWillBeComingUp(){
+  mainMusic.load()
+  endMusic.play()
+
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
+  document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+  document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+  document.getElementById("title").innerHTML="Developer"
+  document.getElementById("description").innerHTML="That's it, and you live a happy life with your harem."
+  document.removeEventListener("keyup", midTransition)
+  document.addEventListener("keyup", moreWillBeComingUp2) 
+}
+
+function moreWillBeComingUp(event){
+  if (event.keyCode === 13) {
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
+    document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+    document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+    document.getElementById("title").innerHTML="Developer"
+    document.getElementById("description").innerHTML="The End"
+    document.removeEventListener("keyup", midTransition)
+    
+    setTimeout(() => {
+      window.close()
+    }, 100)
+  }
+}
 
 
 
