@@ -185,7 +185,7 @@ function panChoicePop(event){
   }
 }
 
-function panFail(event){
+function panFail(){
   document.querySelector('.option1').style.display = ""
   document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/Pandemonia.png')"
@@ -209,7 +209,7 @@ function panFailFail(event){
   }
 }
 
-function panSuccess(event) {
+function panSuccess() {
   document.querySelector('.option1').style.display = ""
   document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/Pandemonia Success.png')"
@@ -259,25 +259,18 @@ function modeusChoice(event) {
 
 function modeusChoicePop(event){
   if (event.keyCode === 13 ) { 
-    document.querySelector('.option1').style.display = "block"
-    document.querySelector('.option2').style.display = "block"
-    document.querySelector('.option1').style.opacity = "0"
-    document.querySelector('.option2').style.opacity = "0"
-    document.querySelector('.option1').style.transform = "translateY(30px)"
-    document.querySelector('.option2').style.transform = "translateY(30px)"
+    createButtons()
 
     setTimeout(() => {
-      document.querySelector('.option1').style.opacity = "1"
-      document.querySelector('.option2').style.opacity = "1"
-      document.querySelector('.option1').style.transform = "none"
-      document.querySelector('.option2').style.transform = "none"
+      showButtons()
     }, 100)
 
     document.removeEventListener("keyup", modeusChoicePop) 
   }
 }
 
-function modeFail(event){
+
+function modeFail(){
   document.querySelector('.option1').style.display = ""
   document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/Modeus.png')"
@@ -341,6 +334,8 @@ function cerChoice(event) {
     document.getElementById("title").innerHTML="Cerberus, the Triple Demon"
     document.getElementById("description").innerHTML="Are you a human? A real human? Please, take us with you."
 
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
     document.querySelector('.option1').innerHTML = "This is getting too easy. I have questions."
     document.querySelector('.option2').innerHTML = "Sure, why not?"  
     document.querySelector('.option1').onclick = cerFail
@@ -348,32 +343,24 @@ function cerChoice(event) {
     document.removeEventListener("keyup", cerChoice) 
 
     setTimeout(() => {
-    document.addEventListener("keyup", cerChoicePop)
+    document.addEventListener("keyup", ChoicePop)
     }, 100)
   }
 }
 
-function cerChoicePop(event){
+function ChoicePop(event){
   if (event.keyCode === 13 ) { 
-    document.querySelector('.option1').style.display = "block"
-    document.querySelector('.option2').style.display = "block"
-    document.querySelector('.option1').style.opacity = "0"
-    document.querySelector('.option2').style.opacity = "0"
-    document.querySelector('.option1').style.transform = "translateY(30px)"
-    document.querySelector('.option2').style.transform = "translateY(30px)"
+    createButtons()
 
     setTimeout(() => {
-      document.querySelector('.option1').style.opacity = "1"
-      document.querySelector('.option2').style.opacity = "1"
-      document.querySelector('.option1').style.transform = "none"
-      document.querySelector('.option2').style.transform = "none"
+      showButtons()
     }, 100)
 
     document.removeEventListener("keyup", cerChoicePop) 
   }
 }
 
-function cerFail(event){
+function cerFail(){
   document.querySelector('.option1').style.display = ""
   document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/Cerberus.png')"
@@ -417,7 +404,8 @@ function cerSuccess (){
 
 
 function fourthTransition() {  
-  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/arcade.jpg')"
   document.getElementById("title").innerHTML=""
   document.getElementById("description").innerHTML="You realized what you did was having a heated woman, a sad OL, and 3 dogs??? They are cute though… Moving on. Ya found yourself in an arcade because you wanna have some fun other than crazy demons. As you played a game. You saw a drunk girl playing The Last Federation??? Just as you walked past her, she saw ya coming."
@@ -431,16 +419,21 @@ function fourthTransition() {
 
 function maChoice(event) {
   if (event.keyCode === 13) {
+    console.log('before hi')
     event.preventDefault();
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/Malina.png')"
     document.getElementById("title").innerHTML="Malina, the Sour Demon"
     document.getElementById("description").innerHTML="Great, more braindead idiots… Never seen your ugly face before.What are you playing at?"
 
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
     document.querySelector('.option1').innerHTML = "This is delicious. Please, insult me more."
     document.querySelector('.option2').innerHTML = "I’d sure love to play with you."  
     document.querySelector('.option1').onclick = maFail
     document.querySelector('.option2').onclick = maSuccess
-    document.removeEventListener("keyup", maChoice) 
+    if (document.removeEventListener("keyup", maChoice)) {
+      console.log("successfully removed hi")
+    } 
 
     setTimeout(() => {
     document.addEventListener("keyup", maChoicePop)
@@ -450,6 +443,7 @@ function maChoice(event) {
 
 function maChoicePop(event){
   if (event.keyCode === 13 ) { 
+    console.log('hi')
     document.querySelector('.option1').style.display = "block"
     document.querySelector('.option2').style.display = "block"
     document.querySelector('.option1').style.opacity = "0"
@@ -468,7 +462,7 @@ function maChoicePop(event){
   }
 }
 
-function maFail(event){
+function maFail(){
   document.querySelector('.option1').style.display = ""
   document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/Malina.png')"
@@ -529,6 +523,8 @@ function zChoice(event) {
     document.getElementById("title").innerHTML="Zdrada, the Bitch Demon"
     document.getElementById("description").innerHTML="Yo, I’ve heard about your harem. I’m in."
 
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
     document.querySelector('.option1').innerHTML = "It’s not really a harem anymore. We just play turn based strategies"
     document.querySelector('.option2').innerHTML = "Wait. I have a feeling I’ll regret it."  
     document.querySelector('.option1').onclick = zFail
@@ -603,7 +599,8 @@ function zSuccess (){
   document.addEventListener("keyup", sixthTransition)
 }
 
-function sixthTransition() {  
+function sixthTransition() { 
+  console.log('add azaChoice') 
   document.querySelector('.option1').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/angel.jpg')"
   document.getElementById("title").innerHTML=""
@@ -617,11 +614,14 @@ function sixthTransition() {
 
 function azaChoice(event) {
   if (event.keyCode === 13) {
+    console.log('remove azaChoice')
     event.preventDefault();
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/azazel.png')"
     document.getElementById("title").innerHTML="Azazel, the Curious Angel."
     document.getElementById("description").innerHTML="Oh my heaven! What would a living human be doing in hell? Most unusual."
 
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
     document.querySelector('.option1').innerHTML = "Looking for angels."
     document.querySelector('.option2').innerHTML = "Looking for demons."  
     document.querySelector('.option1').onclick = azaHeaven
@@ -708,13 +708,13 @@ function seventhTransition(event) {
   }
 }
 
-function jusChoice(event) {
-
-    event.preventDefault();
+function jusChoice() {
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/justice.png')"
     document.getElementById("title").innerHTML="Justice, the Awesome Demon"
     document.getElementById("description").innerHTML="Oh my heaven! What would a living human be doing in hell? Most unusual."
 
+    document.querySelector('.option1').style.display = "none"
+    document.querySelector('.option2').style.display = "none"
     document.querySelector('.option1').innerHTML = "It took some work. Wanna join my harem?"
     document.querySelector('.option2').innerHTML = "I just skipped it in the menu. Wanna join my harem?"  
     document.querySelector('.option1').onclick = jusSuccess1
@@ -806,6 +806,8 @@ function luciChoice2(event) {
   document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
   document.getElementById("description").innerHTML="Pledge your soul to me and I’ll make you my most treasured slave."
 
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
   document.querySelector('.option1').innerHTML = "Ye ma quean! (Yes my queen)"
   document.querySelector('.option2').innerHTML = "No, thanks. But you can join my harem"  
   document.querySelector('.option1').onclick = luciFail1
@@ -869,6 +871,8 @@ function luciConfuse(){
   document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
   document.getElementById("description").innerHTML="What are you trying to accomplish? You think you can enslave demons to your will?"
 
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
   document.querySelector('.option1').innerHTML = "Call me master. And ask for permission before you speak."
   document.querySelector('.option2').innerHTML = "I can offer coffee, turn based strategies and chocolate pancakes."  
   document.querySelector('.option1').onclick = luciFail2
@@ -1003,6 +1007,18 @@ function moreWillBeComingUp(event){
   }
 }
 
+function createButtons() {
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option1').style.opacity = "0"
+  document.querySelector('.option2').style.opacity = "0"
+  document.querySelector('.option1').style.transform = "translateY(30px)"
+  document.querySelector('.option2').style.transform = "translateY(30px)"
+}
 
-
-
+function showButtons() {
+  document.querySelector('.option1').style.opacity = "1"
+  document.querySelector('.option2').style.opacity = "1"
+  document.querySelector('.option1').style.transform = "none"
+  document.querySelector('.option2').style.transform = "none"
+}
