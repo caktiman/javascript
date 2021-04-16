@@ -58,22 +58,6 @@ function initiation(){
   document.addEventListener("keyup", choicePop)
 }
 
-// function mainMenu(event) {
-//   if (event.key === "Enter") {
-//     document.getElementById("description").innerHTML=""
-//     document.querySelector('.option1').style.display = "block"
-//     document.querySelector('.option2').style.display = "block"
-    
-
-//     setTimeout(() => {
-//       document.querySelector('.option1').style.opacity = "1"
-//       document.querySelector('.option1').style.transform = "none"
-//       document.querySelector('.option2').style.opacity = "1"
-//       document.querySelector('.option2').style.transform = "none"
-//     }, 100)
-//   }
-// }
-
 function vTuber(){
   introMusic.load()
   vtuberMusic.play()
@@ -384,16 +368,16 @@ function cerSuccess (){
 
 function fourthTransition() {  
   document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/arcade.jpg')"
   document.getElementById("title").innerHTML=""
   document.getElementById("description").innerHTML="You realized what you did was having a heated woman, a sad OL, and 3 dogs??? They are cute though… Moving on. Ya found yourself in an arcade because you wanna have some fun other than crazy demons. As you played a game. You saw a drunk girl playing The Last Federation??? Just as you walked past her, she saw ya coming."
   document.removeEventListener("onclick", fourthTransition) 
 
   setTimeout(() => {
-    document.addEventListener("keyup", maChoice)
+    document.addEventListener("keyup", maChoice , false)
   }, 100);
 }
-
 
 function maChoice(event) {
   if (event.key === "Enter" ) {
@@ -412,7 +396,9 @@ function maChoice(event) {
     document.querySelector('.option1').onclick = maFail
     document.querySelector('.option2').onclick = maSuccess
    
-    document.removeEventListener("keyup", maChoice) 
+    if (document.removeEventListener("keyup", maChoice, false)){
+      console.log("Succesfully removed")
+    }
   }
 }
 
@@ -470,8 +456,6 @@ function fifthTransition() {
     document.addEventListener("keyup", zChoice)
   }, 100);
 }
-
-
 
 function zChoice(event) {
   if (event.key === "Enter" ) {
@@ -796,7 +780,6 @@ function luciSuccess2 (event){
 }
 
 function luciSuccess3 (event){
-
     event.preventDefault();
     document.querySelector('.option1').style.display = "block"
     document.querySelector('.option1').innerHTML = "You Will."
@@ -810,11 +793,9 @@ function luciSuccess3 (event){
 }
 
 function midTransition() { 
-  
-  
     document.querySelector('.option1').style.display = "block"
     document.querySelector('.option1').innerHTML = "What?"
-    document.querySelector('.option1').onclick = moreWillBeComingUp
+    document.querySelector('.option1').onclick = question
     document.querySelector('.option2').style.display = ""
 
     document.querySelector('#bgimg').style.backgroundImage = "url('none')"
@@ -824,56 +805,444 @@ function midTransition() {
   }
 
 
-// // function question (){
-// //     event.preventDefault();
-// //     document.querySelector('.option1').style.display = "none"
-// //     document.querySelector('.option2').style.display = "none"
-// //     document.querySelector('#bgimg').style.backgroundImage = "url('none')"
-// //     document.querySelector('#bgimg').style.backgroundColor = "#01031c"
-// //     document.getElementById("title").innerHTML="???"
-// //     document.getElementById("description").innerHTML="YOU TRULY THOUGHT YOU COULD JUST WALK AWAY? AFTER ALL YOU HAVE DONE?" 
+function question (){
+    mainMusic.load()
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = " *censored* is this kind of transition?"
+    document.querySelector('.option1').onclick = GG
+    document.querySelector('.option2').style.display = ""
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/question mark.png')"
+    document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+    document.getElementById("title").innerHTML="???"
+    document.getElementById("description").innerHTML="YOU TRULY THOUGHT YOU COULD JUST WALK AWAY? AFTER ALL YOU HAVE DONE?" 
+}
+
+function GG (){
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "...and I am dead..."
+    document.querySelector('.option1').onclick = dead
+    document.querySelector('.option2').style.display = ""
+
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+    document.getElementById("title").innerHTML="???"
+    document.getElementById("description").innerHTML="You felt the biting cold of chains on your skin. Followed by fire, burning the flesh from your bones." 
+}
+
+function dead (){
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "Ah I see, this must be the MC power!"
+    document.querySelector('.option1').onclick = judgementTransition
+    document.querySelector('.option2').style.display = ""
+
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('none')"
+    document.querySelector('#bgimg').style.backgroundColor = "#01031c"
+    document.getElementById("title").innerHTML="???"
+    document.getElementById("description").innerHTML="It felt as if you’ve died a thousand deaths. Yet as the flames subsided… Somehow, you were still alive." 
+}
+
+
+function judgementTransition (){
+  bossMusic.play()
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "OH HELL NO!"
+    document.querySelector('.option1').onclick = judgementAppear
+    document.querySelector('.option2').style.display = ""
+
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement transition.png')"
+    document.getElementById("title").innerHTML="???"
+    document.getElementById("description").innerHTML="I ONLY JUST FOUND YOU. TRESPASSER! SO DON’T DIE ON ME YET. WE WILL SPEND A LOT OF TIME TOGETHER, YOU AND I." 
+}
+
+function judgementAppear (){
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "...Imma run for ma lifa!"
+    document.querySelector('.option1').onclick = runForYourLife
+    document.querySelector('.option2').style.display = ""
+
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement emergence.png')"
+    document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+    document.getElementById("description").innerHTML="IGNITE THE SIN MACHINE! SUFFERING MUST BE MADE!" 
+}
+
+function runForYourLife (){
+    document.querySelector('.option1').style.display = "block"
+    document.querySelector('.option1').innerHTML = "Run away"
+    document.querySelector('.option1').onclick = runFail
+
+    document.querySelector('.option2').style.display = "block"
+    document.querySelector('.option2').innerHTML = "Destroy the chain that’s in front of you"
+    document.querySelector('.option2').onclick = destroySuccess
+
+    document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement emergence.png')"
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Just as she finished her talk, she ignited the sin machine and chains were stuck in front of you. Now what?" 
+}
+
+function runFail (){
+  document.querySelector('.option1').style.display = ""
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/bad end.png')"
+  document.getElementById("title").innerHTML="???"
+  document.getElementById("description").innerHTML="You made yourself a coward and you didn’t accomplish your dream. Even though you made yourself back to the common realm, you died with no achievement." 
+}
+
+function destroySuccess(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Look at ma big gun!"
+  document.querySelector('.option1').onclick = judgement
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/one punch.jpg')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="It was hard as hell, but you managed to break it with sheer force." 
+
+}
+
+function judgement() {
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "No one likes you!!!"
+  document.querySelector('.option1').onclick = cerberus
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="HOW DO YOU LIKE THE SIN MACHINE, TRESPASSER? SURRENDER AND LET IT CONSUME YOU!"
+
+}
+
+function cerberus() {
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "I will!"
+  document.querySelector('.option1').onclick = pandemonia
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j cer.png')"
+  document.getElementById("title").innerHTML="Cerberus, the Triple Demon"
+  document.getElementById("description").innerHTML="No, wait! Don’t five up! You need to get us out of here!"
   
-// //     document.removeEventListener("onclick", question) 
-// //     document.addEventListener("keyup", midTransition)
-// // }
+}
+
+function pandemonia() {
+  
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "After I get the hell our of here!"
+  document.querySelector('.option1').onclick = judgementDetermined
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j pan.png')"
+  document.getElementById("title").innerHTML="Pandemonia, the Tired Demon"
+  document.getElementById("description").innerHTML="And I’m still looking forward to my coffee."
+}
+
+function judgementDetermined() {
+  
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "You have no right to determine my fate!"
+  document.querySelector('.option1').onclick = lucifer
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement determined.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="LEAVE HOPE! HIS FATE IS SEALED!"
+
+}
+
+function lucifer(event) {
+ 
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "I'm not your dog, *censored*!"
+  document.querySelector('.option1').onclick = silent
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j luci.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="Judgement, dear. This man may not know it, but he belongs to me. Could you please not damage him?"
+}
+
+function silent() {
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "*censored*!"
+  document.querySelector('.option1').onclick = runForYourLife2
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement angry.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="Be Silent! REAL WORK IS ABOUT TO BEGIN!"
+}
+
+function runForYourLife2 (){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Destroy them"
+  document.querySelector('.option1').onclick = judgementExplain
+
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option2').innerHTML = "Destroy them!!!"
+  document.querySelector('.option2').onclick = interval
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/rain.jpg')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="More chains were flying down, what will you do?" 
+}
+
+function interval() {
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Thanks?"
+  document.querySelector('.option1').onclick = judgementExplain
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/memeoldmanthumbsup.jpg')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="I like your spirit, young man/woman"
+}
+
+function judgementExplain (){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Like I *censored* care!"
+  document.querySelector('.option1').onclick = luciferAngry
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement smile.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="THOSE CHAINS THAT BIND YOU, ARE MADE OF THINGS THAT BROUGHT YOU HERE.YOUR EGO. YOUR GREED. YOUR LUST. YOU ARE YOUR OWN TORTURER." 
+}
+
+function luciferAngry (){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Yeah! You should listen to her, gal!"
+  document.querySelector('.option1').onclick = reallyAngryJudgement
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j luci.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="Enough! High Prosecutor, I order you to stand down at once!" 
+}
+
+function reallyAngryJudgement(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "I don't care!"
+  document.querySelector('.option1').onclick = justice
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement angry.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="NO AUTHORITY STANDS ABOVE PUNISHMENT!" 
+}
+
+function justice(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Don't encourage her!"
+  document.querySelector('.option1').onclick = azazel
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j just.png')"
+  document.getElementById("title").innerHTML="Justice, the Awesome Demon"
+  document.getElementById("description").innerHTML="Keep going Judge! You are on the roll!" 
+}
+
+function azazel(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Do your reserach somewhere else!"
+  document.querySelector('.option1').onclick = luciblush
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/j aza.png')"
+  document.getElementById("title").innerHTML="Azazel, the Curious Angel"
+  document.getElementById("description").innerHTML="Yes, please continue. This is A+ material so far." 
+}
+
+function luciblush(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Cuz you are not anymore when you joined my harem."
+  document.querySelector('.option1').onclick = finalWords
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/luci blush.png')"
+  document.getElementById("title").innerHTML="Lucifer, the CEO of Hell"
+  document.getElementById("description").innerHTML="I’m supposed to be the goddamn Queen of Hell! Why is nobody ever listening to me?" 
+}
+
+function finalWords(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Only thing I regret is not seeking you sooner."
+  document.querySelector('.option1').onclick = judgeSurprised
+
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option2').innerHTML = "Being punished by you makes all sins worth it."
+  document.querySelector('.option2').onclick = judgeSurprised
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="ANY LAST WORDS BEFORE THE REAL PAIN BEGINS?" 
+}
+
+function judgeSurprised(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "But damn, you have amazing eyes."
+  document.querySelector('.option1').onclick = judgementUnhappy
+
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option2').innerHTML = "Did I mention how much I love your hair?"
+  document.querySelector('.option2').onclick = judgementUnhappy
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="QUIT YOUR CHEAP FLATTERIES! YOU MAKE MY JOB DIFFICULT!" 
+}
+
+function judgementUnhappy(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Really?"
+  document.querySelector('.option1').onclick = judgementUnhappy2
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement unhappy.png')"
+  document.getElementById("title").innerHTML="Judgement, the High Prosecutor"
+  document.getElementById("description").innerHTML="Look, I don’t really want to do this. But the pacts been sealed. Nothing will prevent your damnation. Nothing will prevent your damnation"
+}
+
+function judgementUnhappy2(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy3
+  document.querySelector('.option2').style.display = ""
+
+  document.getElementById("description").innerHTML="However… I could postpone your torment a few years, if you leave and never disturb hell again."
+}
+
+function judgementUnhappy3(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy4
+  document.querySelector('.option2').style.display = ""
+
+  document.getElementById("description").innerHTML="Our fates are one. I will kill you and you’ll suffer. But it does not have to be today"
+}
+
+function judgementUnhappy4(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy5
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement unhappy.png')"
+  document.getElementById("description").innerHTML="SO CONSIDER YOURSELF LUCKY AND GET OUT OF MY SIGHT!"
+}
+
+function judgementUnhappy5(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy6
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement.png')"
+  document.getElementById("description").innerHTML="... ... ..."
+}
+
+function judgementUnhappy6(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy7
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement angry.png')"
+  document.getElementById("description").innerHTML="... ... ..."
+}
+
+function judgementUnhappy7(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').onclick = judgementUnhappy8
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement angry.png')"
+  document.getElementById("description").innerHTML="WHAT? YOU WANT TO INVITE ME TO YOUR HAREM? DON’T BE RIDICULOUS!"
+}
+
+function judgementUnhappy8(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Wouldn’t want it any other way."
+  document.querySelector('.option1').onclick = gloriousSuccess
+ 
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option2').innerHTML = "Believe me. I have worse in my harem already."
+  document.querySelector('.option2').onclick = gloriousSuccess
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement unhappy.png')"
+  document.getElementById("description").innerHTML="You’d share rood with an immortal avatar of pain, blood-sworn to nurder you through torture?"
+}
+
+function judgementUnhappy8(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "Wouldn’t want it any other way."
+  document.querySelector('.option1').onclick = gloriousSuccess
+ 
+  document.querySelector('.option2').style.display = "block"
+  document.querySelector('.option2').innerHTML = "Believe me. I have worse in my harem already."
+  document.querySelector('.option2').onclick = gloriousSuccess
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement unhappy.png')"
+  document.getElementById("description").innerHTML="You’d share rood with an immortal avatar of pain, blood-sworn to nurder you through torture?"
+}
+
+function gloriousSuccess(){
+  document.querySelector('.option1').style.display = "block"
+  document.querySelector('.option1').innerHTML = "[DAB]."
+  document.querySelector('.option1').onclick = moreWillBeComingUp
+  document.querySelector('.option2').style.display = ""
+
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/judgement surprised.png')"
+  document.getElementById("description").innerHTML="Wait, You are serious? Seeing how far off proper ritual we are already, I might as well give it a shot."
+}
 
 function moreWillBeComingUp(){
-  mainMusic.load()
+  bossMusic.load()
   endMusic.play()
 
   document.querySelector('.option1').style.display = "block"
-  document.querySelector('.option1').innerHTML = "..."
+  document.querySelector('.option1').innerHTML = "Uh Hm."
   document.querySelector('.option1').onclick = moreWillBeComingUp2
   document.querySelector('.option2').style.display = ""
 
   document.querySelector('#bgimg').style.backgroundImage = "url('../images/victory.png')"
   document.getElementById("title").innerHTML=""
-  document.getElementById("description").innerHTML="That's it, and you live a happy life with your harem."
+  document.getElementById("description").innerHTML="That's it, and you live a happy life with your harem. Because of how you have your harem from hell. You are still known as the HELLTAKER"
 }
 
 function moreWillBeComingUp2(){
     document.querySelector('.option1').style.display = "block"
-    document.querySelector('.option1').innerHTML = "...Are you kidding me?"
+    document.querySelector('.option1').innerHTML = "That's true"
     document.querySelector('.option1').onclick = moreWillBeComingUp3
     document.querySelector('.option2').style.display = ""
 
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/tired.png')"
     document.getElementById("title").innerHTML=""
-    document.getElementById("description").innerHTML="The End"
+    document.getElementById("description").innerHTML="But it was hell for you to keep order for these demons. Well, life is a hell isn't it? Still better than a normal life."
 }
 
 function moreWillBeComingUp3(){
- 
     document.querySelector('.option1').style.display = "block"
-    document.querySelector('.option1').innerHTML = "I don't think I will be back though. :-)"
+    document.querySelector('.option1').innerHTML = "...OK."
+    document.querySelector('.option1').onclick = theEnd
     document.querySelector('.option2').style.display = ""
 
     document.querySelector('#bgimg').style.backgroundImage = "url('../images/smile.png')"
-    document.getElementById("title").innerHTML="Jeffery Wu, the developr that's broken after finished this game"
-    document.getElementById("description").innerHTML="Just joking. There will be more coming up if I can manage to fix the bugs that happened, which is insane to fix it. Well, you could see the full ver. if you check out this game next Tuesday. See ya!"
-    
-    setTimeout(() => {
-      window.close()
-    }, 7000)
+    document.getElementById("title").innerHTML=""
+    document.getElementById("description").innerHTML="Remember, life is just full of scratches except death, kek."
 }
+
+function theEnd(){
+  document.querySelector('.option1').style.display = "none"
+  document.querySelector('.option2').style.display = "none"
+  
+  document.querySelector('#bgimg').style.backgroundImage = "url('../images/the end.png')"
+  document.getElementById("title").innerHTML=""
+  document.getElementById("description").innerHTML="THE END"
+}
+
 
