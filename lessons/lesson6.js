@@ -19,7 +19,7 @@ function sayFruit(element){
 fruit.forEach(function (element) {console.log(element)})
 
 
-function sayHi{
+function sayHi(){
     console.log(`hi)`)
 }
  
