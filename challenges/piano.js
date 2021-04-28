@@ -22,14 +22,11 @@ var g44 = new Audio("instrument music/g44.mp3")
 var a4 = new Audio("instrument music/a4.mp3")
 var a44 = new Audio("instrument music/a44.mp3")
 var b4 = new Audio("instrument music/b4.mp3")
-
 var c5 = new Audio("instrument music/c5.mp3")
 var c55 = new Audio("instrument music/c55.mp3")
 var d5 = new Audio("instrument music/d5.mp3")
 var d55 = new Audio("instrument music/d55.mp3")
 var e5 = new Audio("instrument music/e5.mp3")
-
-
 
 document.querySelector('#c3').onclick = playC3
 function playC3() {
@@ -51,7 +48,7 @@ document.querySelector('#d3').onclick = playD3
 function playD3() {
     d3.play()
     setTimeout(() => {
-        d3.play()
+        d3.load()
     }, 500)
 }
 
@@ -59,7 +56,7 @@ document.querySelector('#d33').onclick = playD33
 function playD33() {
     d33.play()
     setTimeout(() => {
-        d33.play()
+        d33.load()
     }, 500)
 }
 
@@ -67,7 +64,7 @@ document.querySelector('#e3').onclick = playE3
 function playE3() {
     e3.play()
     setTimeout(() => {
-        e3.play()
+        e3.load()
     }, 500)
 }
 
@@ -75,7 +72,7 @@ document.querySelector('#f3').onclick = playF3
 function playF3() {
     f3.play()
     setTimeout(() => {
-        f3.play()
+        f3.load()
     }, 500)
 }
 
@@ -83,7 +80,7 @@ document.querySelector('#f33').onclick = playF33
 function playF33() {
     f33.play()
     setTimeout(() => {
-        f33.play()
+        f33.load()
     }, 500)
 }
 
@@ -91,7 +88,7 @@ document.querySelector('#g3').onclick = playG3
 function playG3() {
     g3.play()
     setTimeout(() => {
-        g3.play()
+        g3.load()
     }, 500)
 }
 
@@ -99,7 +96,7 @@ document.querySelector('#g33').onclick = playG33
 function playG33() {
     g33.play()
     setTimeout(() => {
-        g33.play()
+        g33.load()
     }, 500)
 }
 
@@ -107,7 +104,7 @@ document.querySelector('#a3').onclick = playA3
 function playA3() {
     a3.play()
     setTimeout(() => {
-        a3.play()
+        a3.load()
     }, 500)
 }
 
@@ -115,7 +112,7 @@ document.querySelector('#a33').onclick = playA33
 function playA33() {
     a33.play()
     setTimeout(() => {
-        a33.play()
+        a33.load()
     }, 500)
 }
 
@@ -123,7 +120,7 @@ document.querySelector('#b3').onclick = playB3
 function playB3() {
     b3.play()
     setTimeout(() => {
-        b3.play()
+        b3.load()
     }, 500)
 }
 
@@ -163,7 +160,7 @@ document.querySelector('#e4').onclick = playE4
 function playE4() {
     e4.play()
     setTimeout(() => {
-        e4.play()
+        e4.load()
     }, 500)
 }
 
@@ -171,7 +168,7 @@ document.querySelector('#f4').onclick = playF4
 function playF4() {
     f4.play()
     setTimeout(() => {
-        f4.play()
+        f4.load()
     }, 500)
 }
 
@@ -179,7 +176,7 @@ document.querySelector('#f44').onclick = playF44
 function playF44() {
     f44.play()
     setTimeout(() => {
-        f44.play()
+        f44.load()
     }, 500)
 }
 
@@ -187,7 +184,7 @@ document.querySelector('#g4').onclick = playG4
 function playG4() {
     g4.play()
     setTimeout(() => {
-        g4.play()
+        g4.load()
     }, 500)
 }
 
@@ -195,7 +192,7 @@ document.querySelector('#g44').onclick = playG44
 function playG44() {
     g44.play()
     setTimeout(() => {
-        g44.play()
+        g44.load()
     }, 500)
 }
 
@@ -203,7 +200,7 @@ document.querySelector('#a4').onclick = playA4
 function playA4() {
     a4.play()
     setTimeout(() => {
-        a4.play()
+        a4.load()
     }, 500)
 }
 
@@ -211,7 +208,7 @@ document.querySelector('#a44').onclick = playA44
 function playA44() {
     a44.play()
     setTimeout(() => {
-        a44.play()
+        a44.load()
     }, 500)
 }
 
@@ -219,7 +216,7 @@ document.querySelector('#b4').onclick = playB4
 function playB4() {
     b4.play()
     setTimeout(() => {
-        b4.play()
+        b4.load()
     }, 500)
 }
 
