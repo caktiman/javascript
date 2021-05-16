@@ -259,3 +259,155 @@ function playE5() {
         e5.load()
     }, 500)
 }
+
+document.addEventListener("keyup", checkClick)
+function checkClick(event){
+    console.log(event.key)
+    if (event.key === "q" ) {
+        c3.play()
+        setTimeout(() => {
+            c3.load()
+        }, 500)
+    }else if(event.key === "2" ){
+        c33.play()
+        setTimeout(() => {
+            c33.load()
+        }, 500)
+    }else if(event.key === "w"){
+        d3.play()
+        setTimeout(() => {
+            d3.load()
+        }, 500)
+    }else if(event.key === "3"){
+        d33.play()
+        setTimeout(() => {
+            d33.load()
+        }, 500)
+    }else if(event.key === "e"){
+        e3.play()
+        setTimeout(() => {
+            e3.load()
+        }, 500)
+    }else if(event.key === "r"){
+        f3.play()
+        setTimeout(() => {
+            f3.load()
+        }, 500)
+    }else if(event.key === "5"){
+        f33.play()
+        setTimeout(() => {
+            f33.load()
+        }, 500)
+    }
+    else if(event.key === "t"){
+        g3.play()
+        setTimeout(() => {
+            g3.load()
+        }, 500)
+    }else if(event.key === "6"){
+        g33.play()
+        setTimeout(() => {
+            a3.load()
+        }, 500)
+    }else if(event.key === "y"){
+        a3.play()
+        setTimeout(() => {
+            a33.load()
+        }, 500)
+    }else if(event.key === "7"){
+        a33.play()
+        setTimeout(() => {
+            b3.load()
+        }, 500)
+    }else if(event.key === "u"){
+        b3.play()
+        setTimeout(() => {
+            b3.load()
+        }, 500)
+    }else if(event.key === "i"){
+        c4.play()
+        setTimeout(() => {
+            c4.load()
+        }, 500)
+    }else if(event.key === "9"){
+        c44.play()
+        setTimeout(() => {
+            c44.load()
+        }, 500)
+    }else if(event.key === "o"){
+        d4.play()
+        setTimeout(() => {
+            d4.load()
+        }, 500)
+    }else if(event.key === "0"){
+        d44.play()
+        setTimeout(() => {
+            d44.load()
+        }, 500)
+    }else if(event.key === "p"){
+        e4.play()
+        setTimeout(() => {
+            e4.load()
+        }, 500)
+    }else if(event.key === "["){
+        f4.play()
+        setTimeout(() => {
+            f4.load()
+        }, 500)
+    }else if(event.key === "="){
+        f44.play()
+        setTimeout(() => {
+            f44.load()
+        }, 500)
+    }else if(event.key === "]"){
+        g4.play()
+        setTimeout(() => {
+            g4.load()
+        }, 500)
+    }else if(event.key === "a"){
+        g44.play()
+        setTimeout(() => {
+            g44.load()
+        }, 500)
+    }else if(event.key === "z"){
+        a4.play()
+        setTimeout(() => {
+            a4.load()
+        }, 500)
+    }else if(event.key === "s"){
+        a44.play()
+        setTimeout(() => {
+            a44.load()
+        }, 500)
+    }else if(event.key === "x"){
+        b4.play()
+        setTimeout(() => {
+            b4.load()
+        }, 500)
+    }else if(event.key === "c"){
+        c5.play()
+        setTimeout(() => {
+            c5.load()
+        }, 500)
+    }else if(event.key === "f"){
+        c55.play()
+        setTimeout(() => {
+            c55.load()
+        }, 500)
+    }else if(event.key === "v"){
+        d5.play()
+        setTimeout(() => {
+            d5.load()
+        }, 500)
+    }else if(event.key === "g"){
+        d55.play()
+        setTimeout(() => {
+            d55.load()
+        }, 500)
+    }else if(event.key === "b"){
+        e5.play()
+        setTimeout(() => {
+            e5.load()
+        }, 500)
+    }
+}

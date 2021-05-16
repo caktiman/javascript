@@ -76,7 +76,19 @@ body{
 }
 
 #f{
+    background-image: url("left\ quarter\ circle.svg");
+    width: 125px;
+    height: 125px;
+    margin-left: 31px;
+    margin-top: -356px;
+}
 
+#g{
+    background-image: url("right\ quarter\ circle.svg");
+    width: 125px;
+    height: 125px;
+    margin-left: 443px;
+    margin-top: -125px;
 }
 
 
