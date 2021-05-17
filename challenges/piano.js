@@ -28,6 +28,7 @@ var d5 = new Audio("instrument music/d5.mp3")
 var d55 = new Audio("instrument music/d55.mp3")
 var e5 = new Audio("instrument music/e5.mp3")
 
+//Fix ma code Github!
 document.querySelector('#c3').onclick = playC3
 function playC3() {
     c3.play()
