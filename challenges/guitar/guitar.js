@@ -8,33 +8,34 @@ var highE = new Audio("Guitar high e rev.m4a")
 document.addEventListener("mouseover", check)
 
 function check(event){
-    console.log(event.explicitOriginalTarget.id)
-    if (event.explicitOriginalTarget.id === "1"){
+    // console.log(event.explicitOriginalTarget.id)
+    console.log(event.target.id)
+    if (event.target.id === "1"){
         lowE.play()
         setTimeout(() => {
             lowE.load()
         }, 4000)
-    }else if(event.explicitOriginalTarget.id === "2"){
+    }else if(event.target.id === "2"){
         A.play()
         setTimeout(() => {
             A.load()
         }, 4000)
-    }else if(event.explicitOriginalTarget.id === "3"){
+    }else if(event.target.id === "3"){
         D.play()
         setTimeout(() => {
             D.load()
         }, 4000)
-    }else if(event.explicitOriginalTarget.id === "4"){
+    }else if(event.target.id === "4"){
         G.play()
         setTimeout(() => {
             G.load()
         }, 4000)
-    }else if(event.explicitOriginalTarget.id === "5"){
+    }else if(event.target.id === "5"){
         B.play()
         setTimeout(() => {
             B.load()
         }, 4000)
-    }else if(event.explicitOriginalTarget.id === "6"){
+    }else if(event.target.id === "6"){
         highE.play()
         setTimeout(() => {
             highE.load()
