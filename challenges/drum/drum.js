@@ -49,6 +49,7 @@ function check(event){
     }
 }
 
+//This is really bad la!
 function checkClick(event){
     console.log(event.key)
     if (event.key === "a" ) {
